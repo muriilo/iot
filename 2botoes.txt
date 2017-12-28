@@ -1,0 +1,30 @@
+int botao    = 9; // define pino 9 como entrada botao liga
+int botao1  = 8; //  define botao 8 como botao desliga
+int saida = 12; // define pino 12 como saida
+
+
+void setup() {
+
+  pinMode (botao,  INPUT); // define como entrada
+  pinMode (botao1, INPUT); // define como entrada
+  pinMode (saida, OUTPUT);     // define como saida
+}
+
+void loop() {
+
+
+  int valor =  digitalRead (botao);//  le o valor de botao
+  int valor2 = digitalRead (botao1); // le o valor de botao1
+
+  if (valor == HIGH && valor2 == LOW) {// Testa o estado dos botoes
+    digitalWrite (saida, HIGH); //  envia saida para nivel alto
+    delay (1000);
+  }
+
+  if (valor == LOW && valor2 == HIGH) { // Testa saida dos botoes
+    digitalWrite (saida,LOW); // envia a saida para nivel baixo
+    delay (1000);
+ 
+
+  }
+}

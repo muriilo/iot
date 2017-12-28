@@ -1,0 +1,17 @@
+void setup() {
+  Serial.begin(9600);
+Serial.println("Iniciando a Serial ...");
+
+int contador = 1;
+while (contador <= 50)
+{
+   Serial.print("Contador :");
+   Serial.println(contador);
+   contador++;
+}
+}
+
+void loop() {
+
+
+}

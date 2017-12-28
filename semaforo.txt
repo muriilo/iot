@@ -1,0 +1,32 @@
+const int led = 1;   
+const int led2 = 2;   
+const int led3 = 3;   
+const int botao = 4; 
+int estadoBotao = 0;
+void setup() {
+  pinMode(led,OUTPUT);  
+  pinMode(led2,OUTPUT);  
+  pinMode(led3,OUTPUT);  
+  pinMode(botao,INPUT); 
+  int contador = 1;
+  while (contador <=1)
+{
+  contador++;
+ 
+}
+}
+void loop() {  
+        estadoBotao = digitalRead(botao);          
+  if (estadoBotao == HIGH) {   
+  digitalWrite(1,HIGH);  
+    delay(5000); 
+  digitalWrite(1,LOW); 
+  digitalWrite(2,HIGH);
+  delay(2000);         
+  digitalWrite(2,LOW);      
+   digitalWrite(3,HIGH); 
+     delay(7000);
+    digitalWrite(3,LOW); 
+}
+ if 
+}

@@ -1,0 +1,44 @@
+const int sensor_temperatura = A0;
+int led_vermelho = 4;
+int led_amarelo = 2;
+int led_verde = 3;
+int buzina = 5;
+int leitura_sensor;
+float temperatura;
+
+void setup() {
+    pinMode (led_vermelho, OUTPUT); 
+  pinMode (led_amarelo, OUTPUT); 
+  pinMode (led_verde, OUTPUT); 
+  pinMode (buzina, OUTPUT);
+analogReference(INTERNAL);
+Serial.begin(9600);
+
+
+}
+
+void loop() {
+  leitura_sensor = analogRead (sensor_temperatura);
+  temperatura = leitura_sensor * 0.1075268817204301;
+  Serial.print("Temperatura; ");
+  Serial.println(temperatura);
+  delay(1000);
+  if (temperatura <=25){
+    digitalWrite(led_verde,HIGH);
+    digitalWrite(led_amarelo,LOW);
+       digitalWrite(led_vermelho,LOW);
+       noTone (buzina);
+  }
+    else if ((temperatura >=25) && (temperatura <=28)) {
+       digitalWrite(led_vermelho,LOW);
+       digitalWrite(led_amarelo,HIGH);
+       digitalWrite(led_verde,LOW);
+       noTone (buzina);
+    }
+      if (temperatura >=28) {
+          digitalWrite(led_amarelo,LOW);
+       digitalWrite(led_verde,LOW);
+                 digitalWrite(led_vermelho,HIGH);
+                 tone(buzina, 600);
+      } 
+  }

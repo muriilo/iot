@@ -1,0 +1,27 @@
+const int botao = 5;
+const int led1 = 6;
+const int led2 = 7;
+int estado;
+int l;
+int d;
+
+void setup() {
+  pinMode (botao, INPUT);
+  pinMode (led1, OUTPUT);
+  pinMode (led2, OUTPUT);
+}
+void loop() {
+  l = digitalRead (botao);
+  if ((l == HIGH) && (d == LOW)) {
+    estado = 1 - estado;
+  } 
+    d=l;
+    if (estado == 1) {
+      digitalWrite (led1, HIGH);
+      digitalWrite (led2, LOW);
+    }
+    else {
+      digitalWrite (led1, LOW);
+      digitalWrite (led2, HIGH);
+    }
+  }
